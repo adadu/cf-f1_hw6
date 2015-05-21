@@ -1,0 +1,64 @@
+
+body {
+  font:normal 18px;
+  font-family:  'Raleway', sans-serif;
+}
+
+#wrapper {
+  background-color: #f9f;
+  padding:20px;
+  margin: 0px auto;
+  width: 757px;
+  border:3px solid #ccc;
+}
+
+.center {
+  text-align: center;
+}
+
+.center img {
+  padding:0;
+  margin:0;
+  border: 6px solid #ccc;
+}
+
+.italBlue {
+  font-style: italic;
+  color: #036;
+}
+
+.shopDetails {
+  display:block;
+}
+
+.shopLoc {
+  display:block;
+}
+
+#donutTable {
+  border:none;
+  padding: 0;
+  width:100%;
+  }
+
+#donutTable th {
+  background-color: #ccc;
+  text-align: left;
+  padding:3px;
+}
+
+#donutTable tr {
+  padding: 0;
+}
+
+#donutTable td {
+  text-align: right;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+}
+
+h1, h2 {
+  font-family:  'Raleway', sans-serif;
+  font-variant: small-caps;
+}
