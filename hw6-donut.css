@@ -1,6 +1,5 @@
-
 body {
-  font:normal 18px;
+  font:normal 16px;
   font-family:  'Raleway', sans-serif;
 }
 
@@ -10,6 +9,7 @@ body {
   margin: 0px auto;
   width: 757px;
   border:3px solid #ccc;
+  opacity: 0;
 }
 
 .center {
@@ -23,42 +23,43 @@ body {
 }
 
 .italBlue {
-  font-style: italic;
-  color: #036;
-}
-
-.shopDetails {
-  display:block;
-}
-
-.shopLoc {
-  display:block;
+  font-style: oblique;
+  color: #606;
+  font-variant:all
 }
 
 #donutTable {
-  border:none;
+  background-color:#fcf;
+  border:#ccc 3px solid;
   padding: 0;
+  margin:0;
+  border:none;
   width:100%;
   }
 
 #donutTable th {
-  background-color: #ccc;
-  text-align: left;
+  background-color: #fcf;
+  text-align: center;
   padding:3px;
+  margin:0;
+  border:none;
 }
 
 #donutTable tr {
   padding: 0;
+  margin:0;
+  border:none;
 }
 
 #donutTable td {
   text-align: right;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  background-color:#ccc;
   padding: 2px;
+  margin:0;
+  border:none;
 }
 
 h1, h2 {
   font-family:  'Raleway', sans-serif;
-  font-variant: small-caps;
+  font-weight:700;
 }

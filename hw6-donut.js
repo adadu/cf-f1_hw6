@@ -1,59 +1,49 @@
-// Jason E Anderson, ja@adadu.com, May 15 2015
+// Jason E Anderson, ja@adadu.com, May 21 2015
 // CodeFellows, HW5 Donut Shop JS only
 
-
 var DonutShop = function(l, h, mn, mx, d) {
-this.locationName = l;
-this.hoursOfOperation = h;
-this.minCustomers = mn;
-this.maxCustomers = mx;
-this.averageDonutsHr = d;
-this.rand = Math.random();
-this.shopLocation = function() {
-  return l;
-};
-this.shopHours = function() {
-  return h;
-};
-this.getDonutsPerHour = function() {
-  var hr = Math.floor(this.calc() * d);
-  return hr;
-};
-this.getDonutsPerDay = function() {
-  var day = Math.floor(this.getDonutsPerHour() * h);
-  return day;
-};
-this.calc = function() {
-  var random = (this.rand * mx - mn + 1) + mn;
-  return random;
-};
-};
+  this.locationName = l;
+  this.hoursOfOperation = h;
+  this.minCustomers = mn;
+  this.maxCustomers = mx;
+  this.averageDonutsHr = d;
+  this.rand = Math.random();
+  this.shopLocation = function() {
+    return l;
+  };
+  this.shopHours = function() {
+    return h;
+  };
+  this.getDonutsPerHour = function() {
+    var hr = Math.floor(this.calc() * d);
+    return hr;
+  };
+  this.getDonutsPerDay = function() {
+    var day = Math.floor(this.getDonutsPerHour() * h);
+    return day;
+  };
+  this.calc = function() {
+    var random = (this.rand * mx - mn + 1) + mn;
+    return random;
+  };
+  };
 
-function DonutMaster() {
-this.shopList = [];
-this.addShop = function(addName) {
-  return this.shopList.push(addName);
-};
+  function DonutMaster() {
+  this.shopList = [];
+  this.addShop = function(addName) {
+    return this.shopList.push(addName);
+  };
 
-this.generateReport = function() {
-  for (var i = 0; i < this.shopList.length; i++) {
-    $("tbody").append("<tr id='row' + i" + "/></tr>");
-    $("'#row' + i" ).append("<th class=" + "shopLoc" + i + ">" + this.shopList[i].shopLocation() + "</th>");
-    /* $("#row" + i ).append("<td class=" + "shopDetails" + i + ">" + this.shopList[i].shopHours() + "</td>");
-    $("#row" + i ).append("<td class=" + "shopDetails" + i + ">" + this.shopList[i].getDonutsPerHour() + "</td>");
-    $("#row" + i ).append("<td class=" + "shopDetails" + i + ">" + this.shopList[i].getDonutsPerDay() + "</td>");
-    /*
-    $(".shopDetails" + i ).hide();
-    $(".shopLoc" + i ).on("mouseover", function() {
-      $(".shopDetails" + i ).show();
-    });
-    $(".shopLoc" + i ).on("mouseout", function() {
-      $(".shopDetails" + i ).hide();
-    });
-*/
-  } // for loop
-}; // generateReport
-} // DonutMaster
+  this.generateReport = function() {
+    for (var i = 0; i < this.shopList.length; i++) {
+      $("tbody").append("<tr id=row" + i + "/></tr>");
+      $("#row" + i ).append("<th class=shopLoc>" + this.shopList[i].shopLocation() + "</th>");
+      $("#row" + i ).append("<td class=shopDetails>" + this.shopList[i].shopHours() + "</td>");
+      $("#row" + i ).append("<td class=shopDetails>" + this.shopList[i].getDonutsPerHour() + "</td>");
+      $("#row" + i ).append("<td class=shopDetails>" + this.shopList[i].getDonutsPerDay() + "</td>");
+    }
+  };
+}
 
 var donutMaster = new DonutMaster();
 var dT = new DonutShop("Downtown", 16, 8, 43, 4.5);
@@ -68,5 +58,16 @@ donutMaster.addShop(we);
 donutMaster.addShop(ba);
 
 $(document).ready( function() {
-donutMaster.generateReport();
+  donutMaster.generateReport();
+  $(".shopDetails").hide();
+  $("#wrapper").fadeTo('slow', 1);
+  $(".shopLoc").mouseout(function() {
+    $(this).siblings().fadeTo('fast', 0);
+  });
+  $(".shopLoc").mouseenter(function() {
+    $(this).siblings().fadeTo('fast', 1);
+  });
+
 });
+
+
