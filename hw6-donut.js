@@ -60,12 +60,13 @@ donutMaster.addShop(ba);
 $(document).ready( function() {
   donutMaster.generateReport();
   $(".shopDetails").hide();
-  $("#wrapper").fadeTo('slow', 1);
+  $("#wrapper").delay(800).fadeTo('slow', 1);
+  $("#donutTable").fadeTo(2500, 1);
   $(".shopLoc").mouseout(function() {
-    $(this).siblings().fadeTo('fast', 0);
+    $(this).siblings().fadeTo(100, 0);
   });
   $(".shopLoc").mouseenter(function() {
-    $(this).siblings().fadeTo('fast', 1);
+    $(this).siblings().fadeTo(10, 1);
   });
 
 });

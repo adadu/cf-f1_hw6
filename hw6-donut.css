@@ -1,6 +1,10 @@
 body {
   font:normal 16px;
   font-family:  'Raleway', sans-serif;
+  background-image: url("http://adadu.com/code/cf_f1/hw6/donut-lynch.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 #wrapper {
@@ -25,7 +29,6 @@ body {
 .italBlue {
   font-style: oblique;
   color: #606;
-  font-variant:all
 }
 
 #donutTable {
@@ -33,13 +36,14 @@ body {
   border:#ccc 3px solid;
   padding: 0;
   margin:0;
-  border:none;
+  border:#ccc solid 3px;
   width:100%;
+  opacity: 0;
   }
 
 #donutTable th {
   background-color: #fcf;
-  text-align: center;
+  text-align: right;
   padding:3px;
   margin:0;
   border:none;
@@ -53,8 +57,14 @@ body {
 
 #donutTable td {
   text-align: right;
-  background-color:#ccc;
-  padding: 2px;
+  background-color:#fff;
+  padding: 3px 3px 0px 3px;
+  margin:0;
+  border:none;
+}
+
+tbody {
+  padding:0px;
   margin:0;
   border:none;
 }
